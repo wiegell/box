@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  armhf-service:
+    build: .
+    container_name: armhf-container
+    volumes:
+      - /mnt/sda1/armhfdeb:/home/bjoern/data
+    user: bjoern
+    tty: true
+    stdin_open: true
+    privileged: true
+    ports:
+      - "5901:5901"  # Expose VNC port
